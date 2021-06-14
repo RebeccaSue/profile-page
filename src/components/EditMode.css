@@ -1,16 +1,54 @@
-#name {
-    text-align: center;
-    font-size: 20px
+body {
+    background-color: coral;
 }
 
-#birthday {
+p {
+    font-family: "Helvetica";
+    font-size: 20px;
+    
+}
+
+.profile {
+    background-color: white;
+    width: 300px;
+    padding: 25px;
     text-align: center;
-    font-size: 20px
+    margin: auto;
+    width: 50%;
+    margin-top: 25px;
+}
+
+
+input[type=text] {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+
+#birthday {
+    font-size: 20px;
+    margin: auto;
+    width: 50%;
+}
+
+#birthday input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 #favourite-colour {
+    font-size: 20px;
+}
+
+#colour-picker {
     text-align: center;
-    font-size: 20px
+    margin: auto;
+    width: 50%; 
 }
 
 #edit-button {
@@ -40,6 +78,8 @@
     text-decoration: none;
   }
   
-.SketchPicker {
+#profile__favourite-colour {
     text-align: center;
+    vertical-align: middle;
+    margin:auto;
 }

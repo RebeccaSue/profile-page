@@ -1,55 +1,63 @@
 import './EditMode.css';
-import { SketchPicker } from 'react-color';
+import DatePicker from "react-datepicker";
+import { ChromePicker } from 'react-color';
+import { useState } from 'react'
+import "react-datepicker/dist/react-datepicker.css";
 
-function EditMode() {
+function EditMode({onSubmit}) {
 
-    let firstName = 'John';
-    let lastName = 'Doe'; 
-
-
-    let birthday = new Date();
-    let birthdayYear = birthday.getFullYear();
-    let birthdayMonth = String(birthday.getMonth() + 1).padStart(2, '0');
-    let birthdayDay = String(birthday.getDate()).padStart(2, '0');
-    birthday = birthdayMonth  + '/' + birthdayDay + '/' + birthdayYear;
+    const [firstname, setFirstname] = useState("");
+    const [lastname, setLastname] = useState("");
+    const [birthday, setBirthday] = useState(new Date());
 
 
-    var today = new Date();
-    var todayDay = String(today.getDate()).padStart(2, '0');
-    var todayMonth = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var todayYear = today.getFullYear();
 
-    today = todayMonth + '/' + todayDay + '/' + todayYear;
-
-
+    const clickHandler = e => {
+        onSubmit(lastname);
+    }
 
     return (
     <div className="profile">
 
-        <div className="profile__name">
-            <div id="name">
-                Name: {firstName} {lastName}
-            </div>
+        
+        <div id="name">
+            <p>Name</p>
+            <input 
+                type="text"
+                name="firstname"
+                id="firstname-input"
+                placeholder="First Name"
+                value={firstname}
+                onChange={e => setFirstname(e.target.value)}
+            />
+            <input 
+                type="text"
+                name="lastname"
+                id="lastname-input"
+                placeholder="Last Name"
+                value={lastname}
+                onChange={e => setLastname(e.target.value)}
+            />
         </div>
-
-        <div className="profile__birthday">
-            <div id="birthday">
-                Birthday: {birthday}
-            </div>
+        <br/>
+        <div id="birthday">
+            <p>Birthday</p>
+            <DatePicker 
+                id="birthday-date"
+                selected={birthday} 
+                onChange={ (date)=>setBirthday(date) }/>
         </div>
-
-        <div className="profile__favourite-colour">
-            <div id="favourite-colour">
-            Favourite Colour 
-            <SketchPicker />
-            </div>
+        <br/>
+        <div id="favourite-colour">
+            <p>Favourite Colour</p>
+            <ChromePicker 
+                id="colour-picker"/>
         </div>
-
-        <div className="profile__edit-button">
-            <div id="edit-button">
-                Edit
-            </div>
-        </div>
+        <br/>
+        <button
+            id="edit-button" 
+            onClick={clickHandler}
+        > Edit </button>
     </div>)
 }
 
