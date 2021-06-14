@@ -1,17 +1,15 @@
 {
-  "name": "my-app",
+  "name": "user-profile",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
     "react": "^17.0.2",
-    "react-color": "^2.19.3",
-    "react-datepicker": "^4.1.1",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
